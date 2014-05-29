@@ -1,2 +1,2 @@
-3d-course-pyOpenGL
+3d course, pyOpenGL
 ==================
