@@ -1,0 +1,21 @@
+http://www.halley.cc/code/?python/vectors.py
+
+для желающих, примерный API :
+
+Интерфейс :
+
+Vector
+  Vector + Vector -> Vector
+  Vector - Vector -> Vector
+  Vector.lenght() -> scalar
+  Vector.normalize() -> scalar
+  Vector * scalar -> Vector
+  Vector / scalar -> Vector
+  Vector.dot(Vector) -> scalar
+  Vector.cross(Vector) ->scalar
+
+Реализации :
+
+  Vector2<float>
+  Vector3<float>
+  Vector4<float>
