@@ -9,4 +9,4 @@
 http://python-opengl-examples.blogspot.ru
 
 Как нарисовать само окошко?
-https://wiki.python.org/moin/GuiProgramming
+достаточно обычного OpenGL, лол
