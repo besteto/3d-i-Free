@@ -6,8 +6,9 @@ import math
 
 
 def display():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glutSolidCube(1.0)
-
+    glutSwapBuffers()
 
 def reshape(width, height):
     pass
@@ -16,7 +17,6 @@ def reshape(width, height):
 def keyPressed(*args):
     if args[0] == '\033':
         sys.exit()
-
 
 def main():
     glutInit(sys.argv)
@@ -28,6 +28,8 @@ def main():
     glutDisplayFunc(display)
     glutReshapeFunc(reshape)
     glutKeyboardFunc(keyPressed)
+
+    glClearColor(0.0, 0.0, 1.0, 1.0)
 
     glutMainLoop()
 
