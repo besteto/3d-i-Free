@@ -1,6 +1,7 @@
 from miniengine import *
 
-def simple() :
+
+def simple():
     return Material(
         '''
             attribute vec3 pos;
@@ -30,7 +31,7 @@ def simple() :
     )
 
 
-def cells() :
+def cells():
     return Material(
         '''
             attribute vec3  pos;
@@ -55,13 +56,14 @@ def cells() :
                 c += .1/cos((v_tex.y*32.+(time/50.)*100.));
                 c += sin(v_tex.x*30.);
 
-	            gl_FragColor = vec4(0,c,0,1.0 );
+                gl_FragColor = vec4(0,c,0,1.0 );
             }
 
         '''
     )
 
-def water() :
+
+def water():
     return Material(
         '''
             attribute vec3  pos;
