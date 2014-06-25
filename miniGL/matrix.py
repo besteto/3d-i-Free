@@ -2,7 +2,6 @@ from math import *
 from numpy import *
 import ctypes
 
-
 class mat4:
     __M = None
 
@@ -15,7 +14,6 @@ class mat4:
 
     def translate(self, x, y, z):
         self.__M = self.__M * matrix([[1, 0, 0, x], [0, 1, 0, y], [0, 0, 1, z], [0, 0, 0, 1]],dtype=float32)
-
     def scale(self, x, y, z):
         self.__M = self.__M * matrix([[x, 0, 0, 0], [0, y, 0, 0], [0, 0, z, 0], [0, 0, 0, 1]],dtype=float32)
 
@@ -38,4 +36,4 @@ class mat4:
         h = tan(radians(fov) * .5)
         w = h * aspect
         dz = f - n
-        self.__M = matrix([[1./w,0,0,0],[0,1./h,0,0],[0,0,-(f+n)/dz,-2. * f * n / dz],[0,0,-1,0]],dtype = float32)
+        self.__M =  matrix([[1./w,0,0,0],[0,1./h,0,0],[0,0,-(f+n)/dz,-2. * f * n / dz],[0,0,-1,0]],dtype = float32)

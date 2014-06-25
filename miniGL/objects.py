@@ -1,18 +1,14 @@
-from miniengine import *
-
+from mesh import Mesh
 
 def plane(width, height):
     w = float(width) / 2.0
     h = float(height) / 2.0
-    return Mesh(
-        [
+    return Mesh([
         -w,  h, 0.0,    0.0, 0.0,
         -w, -h, 0.0,    0.0, 1.0,
          w, -h, 0.0,    1.0, 1.0,
          w,  h, 0.0,    1.0, 0.0],
-
         [0, 1, 3, 2, 3, 1])
-
 
 def cube(width,height, tin):
     w = float(width)  / 2.
