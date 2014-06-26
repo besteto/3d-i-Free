@@ -15,7 +15,7 @@ class Texture():
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-        print 'create texture {0:s}; w: {1:d} h:{2:d}'.format(filename, w, h)
+        print 'create texture {0:s}; w: {1:d}, h: {2:d}'.format(filename, w, h)
 
     @property
     def id(self):

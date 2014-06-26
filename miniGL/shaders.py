@@ -39,7 +39,7 @@ cells = ['GREEN CELLS',
     ''',
     '''
         uniform float time;
-
+        uniform sampler2D texture0;
         varying vec2  v_tex;
 
         void main()
@@ -47,8 +47,8 @@ cells = ['GREEN CELLS',
             float c = .1/cos((v_tex.x*32.+(time/50.)*100.));
             c += .1/cos((v_tex.y*32.+(time/50.)*100.));
             c += sin(v_tex.x*30.);
-
-            gl_FragColor = vec4(0,c,0,1.0 );
+            vec4 col = texture2D(texture0, v_tex);
+            gl_FragColor = col + vec4(0,c,0,1.0 );
         }
 
     ''']
