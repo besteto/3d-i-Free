@@ -18,6 +18,12 @@ void main()
     col *= lambert_factor;
     col += phong_factor;
     col.a = 1.0;
-    gl_FragColor = col;
-
+    if ((v_tex.y < (sin(time)/2.0)) || ((1.0 - v_tex.y) < (sin(time)/2.0)))
+    {
+  	    gl_FragColor = col + vec4(0.75,0.65,0.55,1);
+        }
+    else
+        {
+        gl_FragColor = col;
+        }
 }
