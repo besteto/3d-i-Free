@@ -8,9 +8,9 @@ uniform   mat4 prjView;
 varying vec2 v_tex;
 varying vec3 v_norm;
 varying vec3 v_light;
-varying vec3 v_eye; 
+varying vec3 v_eye;
 
-const vec3 light_position = vec3(0,10,0);
+const vec3 light_position = vec3(-5,0,0);
 const vec3 eye_position   = vec3(0,0,0);
 
 void main()
