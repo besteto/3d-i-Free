@@ -4,7 +4,7 @@ uniform sampler2D texture0;
 
 const float PI    = 3.14159;
 const int zoom    = 50;
-const float speed = 4.0;
+const float speed = 3.0;
 float fScale      = 1.25;
 
 void main()
