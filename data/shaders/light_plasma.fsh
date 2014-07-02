@@ -1,4 +1,5 @@
 varying vec2  v_tex;
+varying vec3 v_light;
 uniform float time;
 
 const float PI    = 3.14159;
@@ -20,6 +21,8 @@ void main()
 	}
 	
 	vec3 col=vec3(0.5*sin(3.0*p.x)+0.5,0.5*sin(3.0*p.y)+0.5,sin(p.x+p.y));
+	float lambert_factor = max(dot(col,v_light),0.);
+	col *= lambert_factor;
 	gl_FragColor=vec4(col, 1.0);
 	
 }

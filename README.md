@@ -8,4 +8,4 @@ python dependences :
   * pip install pyOpenGL
   
 c++ dependences (macos): 
-* http://xquartz.macosforge.org/landing/
+  * http://xquartz.macosforge.org/landing/

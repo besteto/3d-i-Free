@@ -1,5 +1,6 @@
 varying vec2  v_tex;
 uniform float time;
+uniform sampler2D texture0;
 
 const float PI    = 3.14159;
 const int zoom    = 50;
@@ -20,6 +21,6 @@ void main()
 	}
 	
 	vec3 col=vec3(0.5*sin(3.0*p.x)+0.5,0.5*sin(3.0*p.y)+0.5,sin(p.x+p.y));
-	gl_FragColor=vec4(col, 1.0);
+	gl_FragColor=vec4(col, 1.0)*vec4(texture2D(texture0, v_tex));
 	
 }
