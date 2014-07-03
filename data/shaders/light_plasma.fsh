@@ -1,6 +1,7 @@
 varying vec2  v_tex;
 varying vec3 v_light;
 uniform float time;
+uniform sampler2D texture0;
 
 const float PI    = 3.14159;
 const int zoom    = 50;
@@ -9,6 +10,7 @@ float fScale      = 1.25;
 
 void main()
 {
+    vec4 textur = texture2D(texture0,v_tex);
 	vec2 p = v_tex;
 	float ct = time * speed;
 	
@@ -22,7 +24,7 @@ void main()
 	
 	vec3 col=vec3(0.5*sin(3.0*p.x)+0.5,0.5*sin(3.0*p.y)+0.5,sin(p.x+p.y));
 	float lambert_factor = max(dot(col,v_light),0.);
-	col *= lambert_factor;
-	gl_FragColor=vec4(col, 1.0);
+	textur *= lambert_factor;
+	gl_FragColor=vec4(textur);
 	
 }
