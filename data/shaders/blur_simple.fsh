@@ -16,11 +16,11 @@ void main()
     vec4 col = texture2D(texture0,v_tex);
    	float lambert_factor = max(dot(v_norm,v_light),0.);
     float phong_factor   = pow(max(dot(v_norm,normalize(v_light + v_eye)), 0.),specular_power);
-    //col *= lambert_factor;
-    //col += phong_factor;
+    col *= lambert_factor;
+    col += phong_factor;
     col.a = 1.0;
-    gl_FragColor = col;
 
+    gl_FragColor = col;
     gl_FragColor += texture2D(texture0, v_blurTexCoords[ 0])*0.001;
     gl_FragColor += texture2D(texture0, v_blurTexCoords[ 1])*0.005;
     gl_FragColor += texture2D(texture0, v_blurTexCoords[ 2])*0.01;
