@@ -25,6 +25,7 @@ void main()
 	vec3 col=vec3(0.5*sin(3.0*p.x)+0.5,0.5*sin(3.0*p.y)+0.5,sin(p.x+p.y));
 	float lambert_factor = max(dot(col,v_light),0.);
 	textur *= lambert_factor;
+	textur.a = 1.;
 	gl_FragColor=vec4(textur);
 	
 }
