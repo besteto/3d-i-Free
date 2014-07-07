@@ -8,7 +8,7 @@ varying vec3 v_light;
 varying vec3 v_eye;
 
 
-const float specular_power = 10.0;
+const float specular_power = 30.0;
 
 void main()
 {

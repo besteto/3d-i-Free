@@ -43,6 +43,16 @@ class Material:
         pos_id = glGetAttribLocation(self.__id, 'position')
         tex_id = glGetAttribLocation(self.__id, 'texcoord')
         nor_id = glGetAttribLocation(self.__id, 'normal')
+        bin_id = glGetAttribLocation(self.__id, 'binormal')
+        tan_id = glGetAttribLocation(self.__id, 'tangent')
+
+        if bin_id != -1:
+            glVertexAttribPointer(bin_id, 3, GL_FLOAT, GL_FALSE, 32, None)
+            glEnableVertexAttribArray(bin_id)
+        if tan_id != -1:
+            glVertexAttribPointer(tan_id, 3, GL_FLOAT, GL_FALSE, 32, None)
+            glEnableVertexAttribArray(tan_id)
+
         if pos_id != -1:
             glVertexAttribPointer(pos_id, 3, GL_FLOAT, GL_FALSE, 32, None)
             glEnableVertexAttribArray(pos_id)

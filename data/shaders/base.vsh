@@ -1,6 +1,8 @@
 attribute vec3 position;
 attribute vec2 texcoord;
 attribute vec3 normal;
+attribute vec3 binormal;
+attribute vec3 tangent;
 
 uniform   mat4 modelView;
 uniform   mat4 prjView;
@@ -10,7 +12,7 @@ varying vec3 v_norm;
 varying vec3 v_light;
 varying vec3 v_eye;
 
-const vec3 light_position = vec3(0,0,0);
+const vec3 light_position = vec3(-30,30,0);
 const vec3 eye_position   = vec3(0,0,0);
 
 void main()
