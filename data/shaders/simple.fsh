@@ -7,7 +7,6 @@ varying vec3 v_norm;
 varying vec3 v_light;
 varying vec3 v_eye;
 
-
 const float specular_power = 30.0;
 
 void main()
@@ -24,7 +23,7 @@ void main()
     //col *= lambert_factor;
     col += spec;
 
-    col.a = 1.0;
+    col.a = .6 + col.r;
     gl_FragColor = col;
 
 }
