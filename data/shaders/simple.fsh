@@ -13,10 +13,17 @@ const float specular_power = 10.0;
 void main()
 {
     vec4 col = texture2D(texture0,v_tex);
-   	float lambert_factor = max(dot(v_norm,v_light),0.);
-    float phong_factor   = pow(max(dot(v_norm,normalize(v_light + v_eye)), 0.),specular_power);
-    col *= lambert_factor;
-    col += phong_factor;
+
+   	float lambert_factor = max(dot(v_norm,v_light),0.1);
+
+    vec3 phong = reflect(-v_eye,v_norm);
+    vec3 blinn = normalize(v_eye + v_norm);
+
+    float spec = pow(max(dot(v_light,phong),0.1), specular_power);
+
+    //col *= lambert_factor;
+    col += spec;
+
     col.a = 1.0;
     gl_FragColor = col;
 
