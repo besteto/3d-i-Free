@@ -31,6 +31,8 @@ class Engine:
         glutReshapeFunc(self.__resize)
         glutIdleFunc(self.__update)
         glutKeyboardFunc(self.__key)
+        glutMotionFunc(self.__mouseMoveFunction)
+        glutMouseFunc(self.__mousePressFunction)
         Engine.camera = mat4()
         Engine.__instance = self
 
@@ -66,9 +68,10 @@ class Engine:
         self.__keyboardFunction = hdl
         return self
 
-    def set_mouse_handlers(self, mpress, mmove):
+    def set_mousehandlers(self, mpress, mmove):
         self.__mousePressFunction = mpress
         self.__mouseMoveFunction = mmove
+        return self
 
     @staticmethod
     def add_object(self, obj):
