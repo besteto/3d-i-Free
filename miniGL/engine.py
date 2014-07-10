@@ -12,6 +12,7 @@ class Engine:
     __objects = []
     __time = time.time()
     __delta = 0
+    __prevMouse = []
     camera = None
 
     def __init__(self, w, h):
@@ -35,6 +36,7 @@ class Engine:
         glutMouseFunc(self.__mousePressFunction)
         Engine.camera = mat4()
         Engine.__instance = self
+        self.__prevMouse = [glutGet(GLUT_WINDOW_WIDTH)/2,glutGet(GLUT_WINDOW_HEIGHT)/2]
 
     def __key(self, *args):
         if args[0] == '\033':
@@ -43,8 +45,12 @@ class Engine:
             self.__keyboardFunction(args[0])
 
     def __mouseMoveFunction(self, mx, my):
+        dx = mx - self.__prevMouse[0]
+        dy = my - self.__prevMouse[1]
+        self.__prevMouse = [mx, my]
         for every in self.__objects:
-            every.rotate_x(mx)
+            every.rotate_y(dx)
+            every.rotate_x(dy)
 
     @staticmethod
     def __resize(w, h):
