@@ -42,6 +42,10 @@ class Engine:
         elif self.__keyboardFunction:
             self.__keyboardFunction(args[0])
 
+    def __mouseMoveFunction(self, mx, my):
+        for every in self.__objects:
+            every.rotate_x(mx)
+
     @staticmethod
     def __resize(w, h):
         print 'resize {0:d}x{1:d}'.format(w, h)
@@ -71,6 +75,7 @@ class Engine:
     def set_mousehandlers(self, mpress, mmove):
         self.__mousePressFunction = mpress
         self.__mouseMoveFunction = mmove
+        print("mouse handlers = ", mpress, mmove)
         return self
 
     @staticmethod

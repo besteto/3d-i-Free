@@ -24,7 +24,7 @@ def update(dt):
     sph.rotate_x(-50 * dt).rotate_y(-10*dt).rotate_z(-5 * dt)
 
 def mousePress(x,y):
-    print "press", x, y
+    print "press" + x + y
 
 def mouseMove(x,y):
     print "move", x, y
