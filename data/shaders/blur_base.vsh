@@ -29,13 +29,13 @@ void main()
 	
 	gl_Position = p4 * modelView * prjView;
 	
-	v_blurTexCoords[ 0] = v_tex + vec2(-r, -r);
+	v_blurTexCoords[ 0] = v_tex + vec2(-2.*r, 0.);
     v_blurTexCoords[ 1] = v_tex + vec2(-r, 0.0);
     v_blurTexCoords[ 2] = v_tex + vec2(r, 0.0);
-    v_blurTexCoords[ 3] = v_tex + vec2(r, r);
-    v_blurTexCoords[ 4] = v_tex + vec2(0.0, -r);
-    v_blurTexCoords[ 5] = v_tex + vec2(0.0, r);
-    v_blurTexCoords[ 6] = v_tex + vec2(-r, r);
-    v_blurTexCoords[ 7] = v_tex + vec2(r, -r);
+    v_blurTexCoords[ 3] = v_tex + vec2(2.*r, 0.);
+    v_blurTexCoords[ 4] = v_tex + vec2(-3.*r, 0.);
+    v_blurTexCoords[ 5] = v_tex + vec2(3.*r, 0.);
+    v_blurTexCoords[ 6] = v_tex + vec2(-4.*r, 0.);
+    v_blurTexCoords[ 7] = v_tex + vec2(4.*r, 0.);
 }
 
