@@ -47,20 +47,20 @@ class Material:
         tan_id = glGetAttribLocation(self.__id, 'tangent')
 
         if bin_id != -1:
-            glVertexAttribPointer(bin_id, 3, GL_FLOAT, GL_FALSE, 32, None)
+            glVertexAttribPointer(bin_id, 3, GL_FLOAT, GL_FALSE, 56, ctypes.c_void_p(32))
             glEnableVertexAttribArray(bin_id)
         if tan_id != -1:
-            glVertexAttribPointer(tan_id, 3, GL_FLOAT, GL_FALSE, 32, None)
+            glVertexAttribPointer(tan_id, 3, GL_FLOAT, GL_FALSE, 56, ctypes.c_void_p(44))
             glEnableVertexAttribArray(tan_id)
 
         if pos_id != -1:
-            glVertexAttribPointer(pos_id, 3, GL_FLOAT, GL_FALSE, 32, None)
+            glVertexAttribPointer(pos_id, 3, GL_FLOAT, GL_FALSE, 56, None)
             glEnableVertexAttribArray(pos_id)
         if tex_id != -1:
-            glVertexAttribPointer(tex_id, 2, GL_FLOAT, GL_FALSE, 32, ctypes.c_void_p(12))
+            glVertexAttribPointer(tex_id, 2, GL_FLOAT, GL_FALSE, 56, ctypes.c_void_p(12))
             glEnableVertexAttribArray(tex_id)
         if nor_id != -1:
-            glVertexAttribPointer(nor_id, 3, GL_FLOAT, GL_FALSE, 32, ctypes.c_void_p(20))
+            glVertexAttribPointer(nor_id, 3, GL_FLOAT, GL_FALSE, 56, ctypes.c_void_p(20))
             glEnableVertexAttribArray(nor_id)
 
     def set_uniform_matrix(self, k, value):
