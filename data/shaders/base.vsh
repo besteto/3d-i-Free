@@ -14,7 +14,7 @@ varying vec3 v_eye;
 varying vec3 v_tangent;
 varying vec3 v_binormal;
 
-const vec3 light_position = vec3(-30,30,0);
+const vec3 light_position = vec3(0,0,0);
 const vec3 eye_position   = vec3(0,0,0);
 
 void main()
