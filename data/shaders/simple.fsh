@@ -15,7 +15,7 @@ void main()
     vec4 base_color = texture2D (texture0,v_tex);
 	vec4 norm_value = texture2D (texture1,v_tex);
 
-	vec3 normal = normalize(2.0 * vec3(norm_value) - 1.0);
+	vec3 normal = 2.0 * norm_value.xyz - 1.0;
 
 	vec3  blinn  = normalize(v_eye + normal);
 	vec3  phong  = reflect(-v_eye,normal);
@@ -23,7 +23,7 @@ void main()
 	float spec   = pow(max(dot(v_light,phong),0), spec_power) ;
 
     base_color *= shadow;
-	base_color += spec;
+    base_color += spec;
 	base_color.a = 1.0;
 	gl_FragColor = base_color;
 

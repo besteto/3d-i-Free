@@ -19,12 +19,13 @@ const vec3 eye_position   = vec3(0,0,0);
 
 void main()
 {
-	vec4 p4 = vec4(position,1);
-    mat4 modelMatrix = modelView;
+	 vec4 p4 = vec4(position,1) * modelView;
+     vec3 pos = p4.xyz;
 
-     mat3 normalMatrix = mat3(modelMatrix[0].xyz,modelMatrix[1].xyz,modelMatrix[2].xyz);
-     v_light      = normalize(light_position - position);
-     v_eye        = normalize(eye_position   - position);
+     mat3 normalMatrix = mat3(modelView[0].xyz,modelView[1].xyz,modelView[2].xyz);
+
+     v_light      = normalize(light_position - pos);
+     v_eye        = normalize(eye_position   - pos);
      v_tangent    = normalize(tangent  * normalMatrix);
      v_binormal   = normalize(binormal * normalMatrix);
      v_norm       = normalize(normal   * normalMatrix);
@@ -33,7 +34,7 @@ void main()
      v_eye   *= tbn;
 
 	v_tex    = texcoord;
-	
-	gl_Position = p4 * modelView * prjView;
+	gl_Position = p4 * prjView;
+
 }
 
