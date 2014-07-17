@@ -2,23 +2,22 @@ from miniGL import *
 
 e = Engine(800, 600)
 
-t1 = Texture('./data/synqera.jpg')
-t2 = Texture('./data/earth.jpg')
-t3 = Texture('./data/ifree.jpg')
-t4 = Texture('./data/zw.jpg')
-t5 = Texture('./data/ScreenShot.jpg')
-t6 = Texture('./data/normalmap.jpg')
-t7 = Texture('./data/Ancient_Stars.jpg')
-t8 = Texture("./data/chesterfield-normal.jpg")
-eye = Texture('./data/eye_texture_3_flattened-JPEG-BIG.jpg')
+t1 = Texture('./data/textures/synqera.jpg')
+t2 = Texture('./data/textures/earth.jpg')
+t3 = Texture('./data/textures/ifree.jpg')
+t4 = Texture('./data/textures/zw.jpg')
+t5 = Texture('./data/textures/ScreenShot.jpg')
+t7 = Texture('./data/textures/Ancient_Stars.jpg')
+nm1 = Texture('./data/nmaps/normalmap.jpg')
+nm2 = Texture("./data/nmaps/chesterfield-normal.jpg")
 
 m1 = Material('SIMPLE', './data/shaders/base.vsh', './data/shaders/simple.fsh')
 m2 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simple.fsh')
 
-#back = geometry.plane(1, 1).set_material(m1).set_texture([t2, t8]).translate(0, 0, -1)
+#back = geometry.plane(1, 1).set_material(m1).set_texture([t2, nm2]).translate(0, 0, -1)
 #sph = geometry.sphere(50,32).set_material(m1).set_texture([t7])
 
-cub = geometry.cube(5,5,5).set_material(m1).set_texture([t3, t8]).translate(0,0,-15)
+cub = geometry.cube(5,5,5).set_material(m1).set_texture([t3, nm2]).translate(0,0,-15)
 
 def update(dt):
     pass
