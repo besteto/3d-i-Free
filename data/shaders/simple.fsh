@@ -4,7 +4,6 @@ uniform sampler2D texture1;
 uniform float time;
 
 varying vec2 v_tex;
-varying vec3 v_norm;
 varying vec3 v_light;
 varying vec3 v_eye;
 
@@ -20,7 +19,7 @@ void main()
 	vec3  blinn  = normalize(v_eye + normal);
 	vec3  phong  = reflect(-v_eye,normal);
 	float shadow = max(dot(normal,v_light),.0);
-	float spec   = pow(max(dot(v_light,phong),0), spec_power) ;
+	float spec   = pow(max(dot(v_light,blinn),0), spec_power) ;
 
     base_color *= shadow;
     base_color += spec;
