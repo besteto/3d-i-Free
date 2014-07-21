@@ -7,7 +7,7 @@ varying vec2 v_tex;
 varying vec3 v_light;
 varying vec3 v_eye;
 
-const float spec_power = 30.0;
+const float spec_power = 100.0;
 
 void main()
 {
@@ -17,11 +17,11 @@ void main()
 	vec3 normal = 2.0 * norm_value.xyz - 1.0;
 
 	vec3  blinn  = normalize(v_eye + normal);
-	vec3  phong  = reflect(-v_eye,normal);
-	float shadow = max(dot(normal,v_light),.0);
-	float spec   = pow(max(dot(v_light,blinn),0), spec_power) ;
+	vec3  phong  = reflect(-v_eye, normal);
+	float shadow = max(dot(normal, v_light), 0.0);
+	float spec   = pow(max(dot(v_light, blinn), 0), spec_power);
 
-    base_color *= shadow;
+    //base_color *= shadow;
     base_color += spec;
 	base_color.a = 1.0;
 	gl_FragColor = base_color;

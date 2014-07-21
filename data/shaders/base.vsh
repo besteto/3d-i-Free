@@ -11,7 +11,7 @@ varying vec2 v_tex;
 varying vec3 v_light;
 varying vec3 v_eye;
 
-const vec3 light_position = vec3(0,30,0);
+const vec3 light_position = vec3(0,0,0);
 const vec3 eye_position   = vec3(0,0,0);
 
 void main()
@@ -19,7 +19,7 @@ void main()
 	 vec4 p4 = vec4(position,1) * modelView;
      vec3 pos = p4.xyz;
 
-     mat3 normalMatrix = mat3(modelView[0].xyz,modelView[1].xyz,modelView[2].xyz);
+     mat3 normalMatrix = mat3(modelView[0].xyz, modelView[1].xyz, modelView[2].xyz);
 
      mat3 tbn = mat3(
                      normalize(tangent  * normalMatrix),

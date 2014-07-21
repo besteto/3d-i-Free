@@ -7,10 +7,15 @@ t2 = Texture('./data/textures/earth.jpg')
 t3 = Texture('./data/textures/ifree.jpg')
 t4 = Texture('./data/textures/zw.jpg')
 t5 = Texture('./data/textures/ScreenShot.jpg')
-t7 = Texture('./data/textures/Ancient_Stars.jpg')
+t7 = Texture('./data/textures/light_metall.jpg')
 nm1 = Texture('./data/nmaps/normalmap.jpg')
 nm2 = Texture("./data/nmaps/chesterfield-normal.jpg")
 nm3 = Texture("./data/nmaps/original.jpg")
+
+cm1 = Texture("./data/cubemaps/cubemap_names.jpg")
+cm2 = Texture("./data/cubemaps/cube_map_envir.jpg")
+cm3 = Texture("./data/cubemaps/cube_map_3.jpg")
+
 
 m1 = Material('SIMPLE', './data/shaders/base.vsh', './data/shaders/simple.fsh')
 m2 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simple.fsh')
@@ -18,7 +23,7 @@ m2 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simpl
 #back = geometry.plane(1, 1).set_material(m1).set_texture([t2, nm2]).translate(0, 0, -1)
 #sph = geometry.sphere(50,32).set_material(m1).set_texture([t7])
 
-cub = geometry.cube(5,5,5).set_material(m1).set_texture([t5, nm3]).translate(0,0,-15)
+cub = geometry.cubemapped(5,5,5).set_material(m1).set_texture([cm3]).translate(0,0,-15)
 
 def update(dt):
     pass
