@@ -15,15 +15,16 @@ nm3 = Texture("./data/nmaps/original.jpg")
 cm1 = Texture("./data/cubemaps/cubemap_names.jpg")
 cm2 = Texture("./data/cubemaps/cube_map_envir.jpg")
 cm3 = Texture("./data/cubemaps/cube_map_3.jpg")
+cm4 = Texture("./data/cubemaps/XOjpg.jpg")
 
 
-m1 = Material('SIMPLE', './data/shaders/base.vsh', './data/shaders/simple.fsh')
-m2 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simple.fsh')
+m1 = Material('BLINN', './data/shaders/base.vsh', './data/shaders/simple_blinn.fsh')
+m2 = Material('PHONG', './data/shaders/base.vsh', './data/shaders/simple_phong.fsh')
+m3 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simple.fsh')
 
-#back = geometry.plane(1, 1).set_material(m1).set_texture([t2, nm2]).translate(0, 0, -1)
-#sph = geometry.sphere(50,32).set_material(m1).set_texture([t7])
-
-cub = geometry.cubemapped(5,5,5).set_material(m1).set_texture([cm3]).translate(0,0,-15)
+for x in range(-1, 2):
+    for y in range(-1, 2):
+        cube = geometry.cubemapped(.6, .6, .6).set_material(m1).set_texture([t7,cm4]).translate(x, y, -4)
 
 def update(dt):
     pass
