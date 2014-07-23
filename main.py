@@ -15,7 +15,7 @@ nm3 = Texture("./data/nmaps/original.jpg")
 cm1 = Texture("./data/cubemaps/cubemap_names.jpg")
 cm2 = Texture("./data/cubemaps/cube_map_envir.jpg")
 cm3 = Texture("./data/cubemaps/cube_map_3.jpg")
-cm4 = Texture("./data/cubemaps/XOjpg.jpg")
+cm4 = Texture("./data/cubemaps/XO.jpg")
 
 
 m1 = Material('BLINN', './data/shaders/base.vsh', './data/shaders/simple_blinn.fsh')
