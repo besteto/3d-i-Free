@@ -57,7 +57,6 @@ class Mesh:
 
     def translate(self, x, y, z):
         self.__T.translate(x, y, z)
-
         return self
 
     def scale(self, x, y, z):

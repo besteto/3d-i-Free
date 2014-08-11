@@ -7,13 +7,12 @@ class Engine:
     __instance = None
     __updateFunction = None
     __keyboardFunction = None
-    __mousePressFunction = None
-    __mouseMoveFunction = None
     __objects = []
     __time = time.time()
     __delta = 0
     __prevMouse = []
     camera = None
+    prevMouse = [glutGet(GLUT_WINDOW_WIDTH)/2,glutGet(GLUT_WINDOW_HEIGHT)/2]
 
     def __init__(self, w, h):
         print 'init miniGL {0:d}x{1:d}'.format(w, h)
@@ -32,25 +31,15 @@ class Engine:
         glutReshapeFunc(self.__resize)
         glutIdleFunc(self.__update)
         glutKeyboardFunc(self.__key)
-        glutMotionFunc(self.__mouseMoveFunction)
-        glutMouseFunc(self.__mousePressFunction)
         Engine.camera = mat4()
         Engine.__instance = self
-        self.__prevMouse = [glutGet(GLUT_WINDOW_WIDTH)/2,glutGet(GLUT_WINDOW_HEIGHT)/2]
+
 
     def __key(self, *args):
         if args[0] == '\033':
             sys.exit()
         elif self.__keyboardFunction:
             self.__keyboardFunction(args[0])
-
-    def __mouseMoveFunction(self, mx, my):
-        dx = mx - self.__prevMouse[0]
-        dy = my - self.__prevMouse[1]
-        self.__prevMouse = [mx, my]
-        for every in self.__objects:
-            every.rotate_y(dx)
-            every.rotate_x(dy)
 
     @staticmethod
     def __resize(w, h):
@@ -78,10 +67,9 @@ class Engine:
         self.__keyboardFunction = hdl
         return self
 
-    def set_mousehandlers(self, mpress, mmove):
-        self.__mousePressFunction = mpress
-        self.__mouseMoveFunction = mmove
-        print("mouse handlers = ", mpress, mmove)
+    def set_mousehandlers(self, mmove, mpress):
+        glutMotionFunc(mmove)
+        glutMouseFunc(mpress)
         return self
 
     @staticmethod
