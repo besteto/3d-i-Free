@@ -24,8 +24,8 @@ class tttBoard():
     cubes = {}
 
     def __init__(self):
-        for x in range(1, 4):
-            for y in range(1, 4):
+        for x in xrange(1, 4):
+            for y in xrange(1, 4):
                 cube = tttCube(x-2, y-2, -4)
                 self.cubes[(x, y)] = cube
 

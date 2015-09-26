@@ -124,14 +124,14 @@ def sphere(radius, slices):
     r = radius / 1.5
     v = []
     n = []
-    for i in range(0, parallels + 1, 1):
-        for j in range(0, slices + 1, 1):
+    for i in xrange(0, parallels + 1, 1):
+        for j in xrange(0, slices + 1, 1):
             x = r * sin(step * i) * sin(step * j)
             y = r * cos(step * i)
             z = r * sin(step * i) * cos(step * j)
             v.append([x, y, z, j / float(slices), i / float(parallels), x / r, y / r, z / r])
-    for i in range(0, slices / 2, 1):
-        for j in range(0, slices, 1):
+    for i in xrange(0, slices / 2, 1):
+        for j in xrange(0, slices, 1):
             n.append((i * (slices + 1) + j))
             n.append(((i + 1) * (slices + 1) + j))
             n.append(((i + 1) * (slices + 1) + (j + 1)))

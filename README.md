@@ -6,6 +6,7 @@
 python dependences :
   * pip install Pillow
   * pip install pyOpenGL
+  * pip install numpy
   
 c++ dependences (macos): 
   * http://xquartz.macosforge.org/landing/

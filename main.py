@@ -25,8 +25,8 @@ m3 = Material('BLUR', './data/shaders/blur_base.vsh', './data/shaders/blur_simpl
 
 cubes = []
 
-for x in range(-1, 2):
-    for y in range(-1, 2):
+for x in xrange(-1, 2):
+    for y in xrange(-1, 2):
         cube = geometry.cubemapped(.6, .6, .6).set_material(m1).set_texture([cm4,nm4]).translate(x, y, -4)
         cubes.append(cube)
 
